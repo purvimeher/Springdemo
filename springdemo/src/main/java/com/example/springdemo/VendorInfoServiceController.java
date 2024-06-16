@@ -1,5 +1,8 @@
 package com.example.springdemo;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -12,22 +15,25 @@ import java.util.Map;
 public class VendorInfoServiceController {
 
     List<VendorInfo> vendorInfoList = new ArrayList<>();
-    Map<String,VendorInfo> vendorInfoMap = new HashMap<>();
+
 
     @PostMapping
     public String addVendorInfo(@RequestBody VendorInfo vendorInfo){
-        vendorInfoMap.put(vendorInfo.getVendorID(), vendorInfo);
         vendorInfoList.add(vendorInfo);
         return "Vendor Successfully Created";
     }
 
-    @GetMapping("all")
+    @GetMapping("/all")
     public List<VendorInfo> getAllVendorInfo(){
         return vendorInfoList;
     }
 
-    @GetMapping("{vendorId}")
-    public VendorInfo getVendorInfo(String vendorId){
-        return vendorInfoMap.get(vendorId);
+    @GetMapping("{vendorID}")
+    public VendorInfo getVendorInfo(@PathVariable String vendorID){
+        VendorInfo result =vendorInfoList.stream()
+                .filter(vendorInfo -> vendorInfo.getVendorID().equals(vendorID))
+                .findFirst()
+                .orElse(null);
+      return  result;
     }
 }
