@@ -10,9 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/vendorInfo")
 public class VendorInfoServiceController {
-
     List<VendorInfo> vendorInfoList = new ArrayList<>();
-
 
     @PostMapping
     public String addVendorInfo(@RequestBody VendorInfo vendorInfo) {
@@ -29,7 +27,11 @@ public class VendorInfoServiceController {
 
     @GetMapping("{vendorID}")
     public ResponseEntity<VendorInfo> getVendorInfo(@PathVariable String vendorID) {
-        VendorInfo result = vendorInfoList.stream().filter(vendorInfo -> vendorInfo.getVendorID().equals(vendorID)).findFirst().orElse(null);
+        VendorInfo result = vendorInfoList.stream()
+                .filter(vendorInfo -> vendorInfo.getVendorID().equals(vendorID))
+                .findFirst()
+                .orElse(null);
+
         if (result == null) {
             return ResponseEntity.notFound().build();
         } else {
