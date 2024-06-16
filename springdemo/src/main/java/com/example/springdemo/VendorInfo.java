@@ -1,10 +1,13 @@
 package com.example.springdemo;
 
+import java.time.LocalDateTime;
+
 public class VendorInfo {
 
     public String vendorID;
     public String name;
     public String location;
+    private LocalDateTime createdOn;
 
     public VendorInfo() {
     }
@@ -26,4 +29,13 @@ public class VendorInfo {
     public String getLocation() {
         return location;
     }
+
+    public LocalDateTime getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(LocalDateTime createdOn) {
+        this.createdOn = createdOn;
+    }
+
 }
