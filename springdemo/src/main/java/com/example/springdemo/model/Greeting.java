@@ -1,4 +1,4 @@
-package com.example.springdemo;
+package com.example.springdemo.model;
 
 public class Greeting {
     private final long id;

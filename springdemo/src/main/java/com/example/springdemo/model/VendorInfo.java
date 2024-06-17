@@ -1,19 +1,26 @@
-package com.example.springdemo;
+package com.example.springdemo.model;
+
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "vendor_info")
 public class VendorInfo {
 
-    public String vendorID;
+    @Id
+//    @Column(name="vendorId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public int vendorId;
     public String name;
     public String location;
-    private LocalDateTime createdOn;
+    public LocalDateTime createdOn;
 
     public VendorInfo() {
     }
 
-    public VendorInfo(String vendorID, String name, String location) {
-        this.vendorID = vendorID;
+    public VendorInfo(int vendorId, String name, String location) {
+        this.vendorId = vendorId;
         this.name = name;
         this.location = location;
     }
@@ -22,8 +29,8 @@ public class VendorInfo {
         return name;
     }
 
-    public String getVendorID() {
-        return vendorID;
+    public int getVendorId() {
+        return vendorId;
     }
 
     public String getLocation() {

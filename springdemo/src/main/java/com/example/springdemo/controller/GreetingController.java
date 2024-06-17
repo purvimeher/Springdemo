@@ -1,5 +1,6 @@
-package com.example.springdemo;
+package com.example.springdemo.controller;
 
+import com.example.springdemo.model.Greeting;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
