@@ -2,6 +2,7 @@ package com.example.springdemo.controller;
 
 import com.example.springdemo.model.VendorInfo;
 import com.example.springdemo.service.VendorInfoService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -35,20 +36,14 @@ public class VendorInfoServiceController {
     }
 
     @GetMapping("{vendorID}")
-    public VendorInfo getVendorInfo(@PathVariable String vendorID) {
+    public ResponseEntity<VendorInfo> getVendorInfo(@PathVariable String vendorID) {
 
-        return vendorInfoService.getVendorInfo(vendorID);
 
-//        VendorInfo result = vendorInfoList.stream()
-//                .filter(vendorInfo -> vendorInfo.getVendorId().equals(vendorID))
-//                .findFirst()
-//                .orElse(null);
-//
-//        if (result == null) {
-//            return ResponseEntity.notFound().build();
-//        } else {
-//            return ResponseEntity.accepted().body(result);
-//        }
+
+        VendorInfo result = vendorInfoService.getVendorInfo(vendorID);
+
+        return (result==null)?ResponseEntity.notFound().build() : ResponseEntity.accepted().body(result);
+
     }
 
     @DeleteMapping("{vendorID}")

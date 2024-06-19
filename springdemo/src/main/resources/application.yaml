@@ -6,3 +6,12 @@ spring:
 
   #JPA Settings
   jpa.hibernate.ddl_auto: create
+
+  #MongoDB
+  data:
+      mongodb:
+        host: localhost
+        port: 55000
+        database: demo
+  #data.mongodb.username=username_value  (optional)
+  #spring.data.mongodb.password=password_value (optional)
