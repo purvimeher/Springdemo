@@ -27,17 +27,18 @@ public class VendorInfoServiceImpl implements VendorInfoService {
     public String updateVendorInfo(VendorInfo vendorInfo) {
 
         if (vendorInfoRepository.findById(String.valueOf(vendorInfo.vendorId)).isEmpty()) {
-            return createVendorInfo(vendorInfo);
+            createVendorInfo(vendorInfo);
+            return "Could not find vendorId : " + vendorInfo.vendorId + ", so inserted a new Record with different vendorId";
         } else {
             vendorInfoRepository.findById(String.valueOf(vendorInfo.vendorId)).map(vendor -> {
                 vendor.name = vendorInfo.name;
                 vendor.location = vendorInfo.location;
                 vendor.createdOn = LocalDateTime.now();
                 vendorInfoRepository.save(vendor);
-                return "Updated " + vendorInfo.getVendorId() + "Successfully";
+                return "Updated  vendorId : " + vendorInfo.getVendorId() + " Successfully";
             });
         }
-        return "Successfully updated data in vendor info table";
+        return "Updated vendorId : " + vendorInfo.getVendorId() + " Successfully";
     }
 
     @Override
