@@ -1,9 +1,9 @@
 package com.example.springdemo.service.impl;
 
+import com.example.springdemo.exception.VendorInforNotFoundException;
 import com.example.springdemo.model.VendorInfo;
 import com.example.springdemo.repository.VendorInfoRepository;
 import com.example.springdemo.service.VendorInfoService;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -36,8 +36,8 @@ public class VendorInfoServiceImpl implements VendorInfoService {
 
     @Override
     public VendorInfo getVendorInfo(String vendorId) {
-
-//        if(vendorInfoRepository.findById(vendorId).isEmpty())
+        if (vendorInfoRepository.findById(vendorId).isEmpty())
+            throw new VendorInforNotFoundException("No vendor is found with id : " + vendorId);
 
         return vendorInfoRepository.findById(vendorId).get();
 
@@ -45,6 +45,9 @@ public class VendorInfoServiceImpl implements VendorInfoService {
 
     @Override
     public List<VendorInfo> getAllVendorInfo() {
+        if (vendorInfoRepository.findAll().isEmpty())
+            throw new VendorInforNotFoundException("No vendors found within the Database");
+
         return vendorInfoRepository.findAll();
     }
 }

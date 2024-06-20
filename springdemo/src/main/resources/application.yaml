@@ -12,6 +12,6 @@ spring:
       mongodb:
         host: localhost
         port: 55000
-        database: demo
+        database: UserDetails
   #data.mongodb.username=username_value  (optional)
   #spring.data.mongodb.password=password_value (optional)

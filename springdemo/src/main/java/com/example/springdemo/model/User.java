@@ -4,8 +4,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
-
-@Document(collection = "VendorInfoDetails")
+/*
+@Document(collection = "UserDetails")
 public class User {
 
     @Id
@@ -13,6 +13,13 @@ public class User {
     public String name;
     public String location;
     public LocalDateTime createdOn;
+
+    public User(String name, String location, LocalDateTime createdOn) {
+        super();
+        this.name = name;
+        this.location = location;
+        this.createdOn = createdOn;
+    }
 
     public String getName() {
         return name;
@@ -34,3 +41,4 @@ public class User {
         this.createdOn = createdOn;
     }
 }
+*/
