@@ -26,14 +26,17 @@ public class VendorInfoServiceImpl implements VendorInfoService {
     @Override
     public String updateVendorInfo(VendorInfo vendorInfo) {
 
-        vendorInfoRepository.findById(String.valueOf(vendorInfo.vendorId)).map(vendor -> {
-            vendor.name = vendorInfo.name;
-            vendor.location = vendorInfo.location;
-            vendor.createdOn = LocalDateTime.now();
-            vendorInfoRepository.save(vendor);
-            return "Updated " + vendorInfo.getVendorId() + "Successfully";
-        });
-//        vendorInfoRepository.save(vendorInfo);
+        if (vendorInfoRepository.findById(String.valueOf(vendorInfo.vendorId)).isEmpty()) {
+            return createVendorInfo(vendorInfo);
+        } else {
+            vendorInfoRepository.findById(String.valueOf(vendorInfo.vendorId)).map(vendor -> {
+                vendor.name = vendorInfo.name;
+                vendor.location = vendorInfo.location;
+                vendor.createdOn = LocalDateTime.now();
+                vendorInfoRepository.save(vendor);
+                return "Updated " + vendorInfo.getVendorId() + "Successfully";
+            });
+        }
         return "Successfully updated data in vendor info table";
     }
 
