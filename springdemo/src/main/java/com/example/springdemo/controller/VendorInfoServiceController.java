@@ -1,7 +1,9 @@
 package com.example.springdemo.controller;
 
 import com.example.springdemo.model.VendorInfo;
+import com.example.springdemo.response.ResponseHandler;
 import com.example.springdemo.service.VendorInfoService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,12 +38,10 @@ public class VendorInfoServiceController {
     }
 
     @GetMapping("{vendorID}")
-    public ResponseEntity<VendorInfo> getVendorInfo(@PathVariable String vendorID) {
+    public ResponseEntity<Object> getVendorInfo(@PathVariable String vendorID) {
 
-        VendorInfo result = vendorInfoService.getVendorInfo(vendorID);
-
-        return (result==null)?ResponseEntity.notFound().build() : ResponseEntity.accepted().body(result);
-
+        return ResponseHandler.responseBuilder("Requested vendorInfo : " + vendorID, HttpStatus.OK, vendorInfoService.getVendorInfo(vendorID));
+//        return vendorInfoService.getVendorInfo(vendorID);
     }
 
     @DeleteMapping("{vendorID}")
