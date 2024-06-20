@@ -27,12 +27,12 @@
 			"response": []
 		},
 		{
-			"name": "VendorInfo",
+			"name": "VendorInfo by ID",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/vendorInfo/1",
+					"raw": "http://localhost:8080/vendorInfo/5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -40,7 +40,7 @@
 					"port": "8080",
 					"path": [
 						"vendorInfo",
-						"1"
+						"5"
 					],
 					"query": [
 						{
@@ -54,7 +54,7 @@
 			"response": []
 		},
 		{
-			"name": "VendorInfo ALL",
+			"name": "VendorInfo get ALL",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -74,9 +74,37 @@
 			"response": []
 		},
 		{
-			"name": "CreateVendorInfo",
+			"name": "Create new VendorInfo",
 			"request": {
 				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"name\": \"Purvi\",\n    \"location\": \"Reading\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vendorInfo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vendorInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update VendorInfo",
+			"request": {
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -96,6 +124,33 @@
 					"port": "8080",
 					"path": [
 						"vendorInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete VendorInfo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vendorInfo/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vendorInfo",
+						"4"
+					],
+					"query": [
+						{
+							"key": "vendorId",
+							"value": "1",
+							"disabled": true
+						}
 					]
 				}
 			},
