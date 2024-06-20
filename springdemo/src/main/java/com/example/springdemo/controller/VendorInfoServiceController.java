@@ -38,8 +38,6 @@ public class VendorInfoServiceController {
     @GetMapping("{vendorID}")
     public ResponseEntity<VendorInfo> getVendorInfo(@PathVariable String vendorID) {
 
-
-
         VendorInfo result = vendorInfoService.getVendorInfo(vendorID);
 
         return (result==null)?ResponseEntity.notFound().build() : ResponseEntity.accepted().body(result);

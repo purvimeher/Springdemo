@@ -31,7 +31,7 @@ public class VendorInfoServiceImpl implements VendorInfoService {
             vendor.location = vendorInfo.location;
             vendor.createdOn = LocalDateTime.now();
             vendorInfoRepository.save(vendor);
-            return "Updated "+ vendorInfo.getVendorId() +"Successfully";
+            return "Updated " + vendorInfo.getVendorId() + "Successfully";
         });
 //        vendorInfoRepository.save(vendorInfo);
         return "Successfully updated data in vendor info table";
@@ -39,7 +39,11 @@ public class VendorInfoServiceImpl implements VendorInfoService {
 
     @Override
     public String deleteVendorInfo(String vendorId) {
-        vendorInfoRepository.deleteById(vendorId);
+        if (vendorInfoRepository.findById(vendorId).isEmpty()) {
+            throw new VendorInforNotFoundException("No vendor is found with id : " + vendorId);
+        } else {
+            vendorInfoRepository.deleteById(vendorId);
+        }
         return "Successfully deleted data from vendor info table";
     }
 
