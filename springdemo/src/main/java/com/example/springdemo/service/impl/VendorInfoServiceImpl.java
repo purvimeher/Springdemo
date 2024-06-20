@@ -6,6 +6,7 @@ import com.example.springdemo.repository.VendorInfoRepository;
 import com.example.springdemo.service.VendorInfoService;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -24,7 +25,15 @@ public class VendorInfoServiceImpl implements VendorInfoService {
 
     @Override
     public String updateVendorInfo(VendorInfo vendorInfo) {
-        vendorInfoRepository.save(vendorInfo);
+
+        vendorInfoRepository.findById(String.valueOf(vendorInfo.vendorId)).map(vendor -> {
+            vendor.name = vendorInfo.name;
+            vendor.location = vendorInfo.location;
+            vendor.createdOn = LocalDateTime.now();
+            vendorInfoRepository.save(vendor);
+            return "Updated "+ vendorInfo.getVendorId() +"Successfully";
+        });
+//        vendorInfoRepository.save(vendorInfo);
         return "Successfully updated data in vendor info table";
     }
 

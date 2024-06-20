@@ -108,7 +108,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\n    \"name\": \"Meher\",\n    \"location\": \"Reading\"\n}",
+					"raw": "{\n    \"vendorId\": 1,\n    \"name\": \"Meher\",\n    \"location\": \"Reading\",\n    \"createdOn\": \"2024-06-20T15:13:52.588593\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"

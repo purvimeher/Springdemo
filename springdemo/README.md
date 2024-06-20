@@ -19,3 +19,10 @@ request sample body
 "name": "Purvi",
 "location": "London"
 }
+
+
+video youtube references:
+https://youtube.com/playlist?list=PLcs1FElCmEu121gqGwlQt47d0SqNkzSTK&si=m7bGrIW26TU3IUnd
+
+mongodb java spring connectivity:
+https://www.mongodb.com/resources/products/compatibilities/spring-boot
