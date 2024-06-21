@@ -10,5 +10,6 @@ public interface VendorInfoService {
     public String updateVendorInfo(VendorInfo vendorInfo);
     public String deleteVendorInfo(String vendorId);
     public VendorInfo getVendorInfo(String vendorId);
+    public VendorInfo getVendorInfoByName(String vendorName);
     public List<VendorInfo> getAllVendorInfo();
 }

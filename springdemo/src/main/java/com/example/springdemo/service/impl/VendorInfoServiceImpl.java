@@ -4,10 +4,12 @@ import com.example.springdemo.exception.VendorInforNotFoundException;
 import com.example.springdemo.model.VendorInfo;
 import com.example.springdemo.repository.VendorInfoRepository;
 import com.example.springdemo.service.VendorInfoService;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VendorInfoServiceImpl implements VendorInfoService {
@@ -59,6 +61,12 @@ public class VendorInfoServiceImpl implements VendorInfoService {
             throw new VendorInforNotFoundException("No vendor is found with id : " + vendorId);
 
         return vendorInfoRepository.findById(vendorId).get();
+    }
+
+    @Override
+    public VendorInfo getVendorInfoByName(String vendorName) {
+       Optional<VendorInfo>  result = vendorInfoRepository.findVendorInfoByName(vendorName);
+        return result.orElse(null);
     }
 
     @Override

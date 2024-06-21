@@ -201,6 +201,34 @@
 					"response": []
 				},
 				{
+					"name": "VendorInfo by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vendorInfo/name/Meher",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendorInfo",
+								"name",
+								"Meher"
+							],
+							"query": [
+								{
+									"key": "vendorId",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "VendorInfo get ALL",
 					"request": {
 						"method": "GET",

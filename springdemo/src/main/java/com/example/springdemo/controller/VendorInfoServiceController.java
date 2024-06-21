@@ -43,6 +43,12 @@ public class VendorInfoServiceController {
 //        return vendorInfoService.getVendorInfo(vendorID);
     }
 
+    @GetMapping("name/{vendorName}")
+    public ResponseEntity<Object> getVendorInfoByName(@PathVariable String vendorName) {
+        return ResponseHandler.responseBuilder("Requested vendorInfo : " + vendorName, HttpStatus.OK, vendorInfoService.getVendorInfoByName(vendorName));
+//        return vendorInfoService.getVendorInfo(vendorID);
+    }
+
     @DeleteMapping("{vendorID}")
     public String deleteVendorInfo(@PathVariable String vendorID) {
         return vendorInfoService.deleteVendorInfo(vendorID);
