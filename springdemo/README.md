@@ -26,3 +26,14 @@ https://youtube.com/playlist?list=PLcs1FElCmEu121gqGwlQt47d0SqNkzSTK&si=m7bGrIW2
 
 mongodb java spring connectivity:
 https://www.mongodb.com/resources/products/compatibilities/spring-boot
+
+Rest endpoints:
+
+
+Swagger UI:
+https://muralitechblog.com/swagger-rest-api-dcoumentation-for-spring-boot/
+
+
+http://localhost:8080/swagger-ui/ [not working even after adding dependencies]
+
+dev tools dependency added to live reload etc
