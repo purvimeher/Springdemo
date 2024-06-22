@@ -9,10 +9,10 @@ logging:
     com:
       example.springdemo.controller: DEBUG
 
-mvc:
-  pathmatch:
-    matching-strategy: ANT_PATH_MATCHER
-  static-path-patter: /swagger*
+#mvc:
+  #pathmatch:
+   # matching-strategy: ANT_PATH_MATCHER
+  #static-path-patter: /swagger*
 
   #JPA Settings
   jpa.hibernate.ddl_auto: create
