@@ -4,6 +4,11 @@ spring:
     username: root
     password: password
 
+logging:
+  level:
+    com:
+      example.springdemo.controller: DEBUG
+
 mvc:
   pathmatch:
     matching-strategy: ANT_PATH_MATCHER

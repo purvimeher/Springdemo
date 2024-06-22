@@ -47,4 +47,14 @@ public class User {
     public void setUserSettings(Map<String, String> userSettings) {
         this.userSettings = userSettings;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId='" + userId + '\'' +
+                ", name='" + name + '\'' +
+                ", creationDate=" + creationDate +
+                ", userSettings=" + userSettings +
+                '}';
+    }
 }

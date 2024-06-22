@@ -2,6 +2,9 @@ package com.example.springdemo.controller;
 
 import com.example.springdemo.model.User;
 import com.example.springdemo.repository.UsersRepository;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,8 +12,8 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/")
 public class UserController {
-//
-//    private final Logger LOG = LoggerFactory.getLogger(getClass());
+
+    private static final Logger LOGINFO = LoggerFactory.getLogger(UserController.class);
 
     private final UsersRepository usersRepository;
 
@@ -20,7 +23,8 @@ public class UserController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public List<User> getAllUsers() {
-//        LOG.info("Getting all users.");
+        LOGINFO.info("Getting all users.");
+        LOGINFO.debug("Users debugging enabled");
         return usersRepository.findAll();
     }
 
@@ -32,7 +36,7 @@ public class UserController {
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public User addNewUsers(@RequestBody User user) {
-//        LOG.info("Saving user.");
+        LOGINFO.info("Saving user. " +user.toString() );
         return usersRepository.save(user);
     }
 
