@@ -20,6 +20,8 @@ request sample body
 "location": "London"
 }
 
+all references from
+https://thinkconstructive.com/
 
 video youtube references:
 https://youtube.com/playlist?list=PLcs1FElCmEu121gqGwlQt47d0SqNkzSTK&si=m7bGrIW26TU3IUnd
@@ -32,8 +34,14 @@ Rest endpoints:
 
 Swagger UI:
 https://muralitechblog.com/swagger-rest-api-dcoumentation-for-spring-boot/
-
+//TODO Fix Swagger UI
 
 http://localhost:8080/swagger-ui/ [not working even after adding dependencies]
 
 dev tools dependency added to live reload etc
+
+//TODO
+LOGBACK logging
+
+//TODO
+Learn Spring Boot annotations
