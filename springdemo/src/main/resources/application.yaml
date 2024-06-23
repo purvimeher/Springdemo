@@ -3,6 +3,10 @@ spring:
     url: jdbc:mysql://localhost:3306/vendor_info_service?useSSL=false
     username: root
     password: password
+  security:
+    user:
+      name: user
+      password: password
 
 logging:
   level:
