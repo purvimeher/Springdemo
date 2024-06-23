@@ -1,42 +1,39 @@
 package com.example.springdemo.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Product")
 public class Product {
 
     @Id
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int Id;
-    public final String productCategory;
-    public final String  productName;
+    public final String BRAND_CATEGORY;
+    public final String BRAND;
     public final String Size_ML;
-    public double Maximum_Retail_Price_Per_Bottle;
+    public double MAXIMUM_RETAIL_PRICE_PER_BOTTLE;
 
-    public Product(String productCategory, String productName, String volume, double Maximum_Retail_Price_Per_Bottle) {
-        this.productCategory = productCategory;
-        this.productName = productName;
+    public Product(String BRAND_CATEGORY, String productName, String volume, double Maximum_Retail_Price_Per_Bottle) {
+        this.BRAND_CATEGORY = BRAND_CATEGORY;
+        this.BRAND = productName;
         this.Size_ML = volume;
-        this.Maximum_Retail_Price_Per_Bottle = Maximum_Retail_Price_Per_Bottle;
+        this.MAXIMUM_RETAIL_PRICE_PER_BOTTLE = Maximum_Retail_Price_Per_Bottle;
     }
 
-    public String getProductCategory() {
-        return productCategory;
+    public String getBRAND_CATEGORY() {
+        return BRAND_CATEGORY;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getBRAND() {
+        return BRAND;
     }
 
     public String getSize_ML() {
         return Size_ML;
     }
 
-    public double getMaximum_Retail_Price_Per_Bottle() {
-        return Maximum_Retail_Price_Per_Bottle;
+    public double getMAXIMUM_RETAIL_PRICE_PER_BOTTLE() {
+        return MAXIMUM_RETAIL_PRICE_PER_BOTTLE;
     }
 }

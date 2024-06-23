@@ -368,7 +368,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{}",
+							"raw": "{\n    \"name\": \"Purvi\",\n    \"userSettings\": {\n        \"bike\": \"Harley Davidson\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -384,6 +384,61 @@
 							"port": "8080",
 							"path": [
 								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Products get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/product/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/mehermeka/Documents/Jenkins/springdemo/src/main/resources/Product_priceList_2024_01.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/product/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"upload"
 							]
 						}
 					},

@@ -15,7 +15,7 @@ logging:
   #static-path-patter: /swagger*
 
   #JPA Settings
-  jpa.hibernate.ddl_auto: create
+  jpa.hibernate.ddl_auto: update
 
   #MongoDB
   data:
