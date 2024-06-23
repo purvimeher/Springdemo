@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -24,12 +25,12 @@ public class ProductPriceService {
         }
     }
 
-//    public ByteArrayInputStream load() {
-//        List<Product> tutorials = repository.findAll();
-//
-//        ByteArrayInputStream in = CSVHelper.tutorialsToCSV(tutorials);
-//        return in;
-//    }
+    public ByteArrayInputStream load() {
+        List<Product> products = productRepository.findAll();
+
+        ByteArrayInputStream in = CSVHelper.productsToCSV(products);
+        return in;
+    }
 
     public List<Product> getAllProductsFromDb() {
         return productRepository.findAll();

@@ -400,7 +400,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/product/all",
+							"raw": "http://localhost:8080/product/allProducts",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -408,7 +408,7 @@
 							"port": "8080",
 							"path": [
 								"product",
-								"all"
+								"allProducts"
 							]
 						}
 					},
@@ -439,6 +439,27 @@
 							"path": [
 								"product",
 								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products download csv",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/product/download/test.csv",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"download",
+								"test.csv"
 							]
 						}
 					},

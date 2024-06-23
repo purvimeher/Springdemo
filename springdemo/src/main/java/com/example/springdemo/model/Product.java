@@ -9,10 +9,13 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int Id;
-    public final String BRAND_CATEGORY;
-    public final String BRAND;
-    public final String Size_ML;
+    public  String BRAND_CATEGORY;
+    public  String BRAND;
+    public  String Size_ML;
     public double MAXIMUM_RETAIL_PRICE_PER_BOTTLE;
+
+    public Product() {
+    }
 
     public Product(String BRAND_CATEGORY, String productName, String volume, double Maximum_Retail_Price_Per_Bottle) {
         this.BRAND_CATEGORY = BRAND_CATEGORY;
