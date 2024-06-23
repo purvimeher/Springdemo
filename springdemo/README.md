@@ -45,3 +45,8 @@ LOGBACK logging
 
 //TODO
 Learn Spring Boot annotations
+
+csv upload data
+https://github.com/sk444/spring-boot-import-csv-file-app
+
+https://www.pixeltrice.com/import-the-csv-file-into-mysql-database-using-spring-boot-application/
