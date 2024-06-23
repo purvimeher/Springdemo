@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductPriceService {
@@ -35,4 +36,9 @@ public class ProductPriceService {
     public List<Product> getAllProductsFromDb() {
         return productRepository.findAll();
     }
+
+    public Optional<Product> findProductInfoByName(String brand, String brandCategory, String sizeMl) {
+        return productRepository.findProductInfoByName(brand,brandCategory,sizeMl);
+    }
+
 }

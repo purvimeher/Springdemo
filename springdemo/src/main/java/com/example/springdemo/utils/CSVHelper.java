@@ -45,10 +45,10 @@ public class CSVHelper {
             for (Product product : productList) {
                 List<String> data = Arrays.asList(
                         String.valueOf(product.Id),
-                        product.getBRAND_CATEGORY(),
-                        product.getBRAND(),
-                        product.getSize_ML(),
-                        String.valueOf(product.getMAXIMUM_RETAIL_PRICE_PER_BOTTLE())
+                        product.getBrand_category(),
+                        product.getBrand(),
+                        product.getSize_ml(),
+                        String.valueOf(product.getMaximum_retail_price_per_bottle())
                 );
 
                 csvPrinter.printRecord(data);

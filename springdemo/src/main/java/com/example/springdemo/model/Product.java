@@ -9,34 +9,34 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int Id;
-    public  String BRAND_CATEGORY;
-    public  String BRAND;
-    public  String Size_ML;
-    public double MAXIMUM_RETAIL_PRICE_PER_BOTTLE;
+    public  String brand_category;
+    public  String brand;
+    public  String size_ml;
+    public double maximum_retail_price_per_bottle;
 
     public Product() {
     }
 
     public Product(String BRAND_CATEGORY, String productName, String volume, double Maximum_Retail_Price_Per_Bottle) {
-        this.BRAND_CATEGORY = BRAND_CATEGORY;
-        this.BRAND = productName;
-        this.Size_ML = volume;
-        this.MAXIMUM_RETAIL_PRICE_PER_BOTTLE = Maximum_Retail_Price_Per_Bottle;
+        this.brand_category = BRAND_CATEGORY;
+        this.brand = productName;
+        this.size_ml = volume;
+        this.maximum_retail_price_per_bottle = Maximum_Retail_Price_Per_Bottle;
     }
 
-    public String getBRAND_CATEGORY() {
-        return BRAND_CATEGORY;
+    public String getBrand_category() {
+        return brand_category;
     }
 
-    public String getBRAND() {
-        return BRAND;
+    public String getBrand() {
+        return brand;
     }
 
-    public String getSize_ML() {
-        return Size_ML;
+    public String getSize_ml() {
+        return size_ml;
     }
 
-    public double getMAXIMUM_RETAIL_PRICE_PER_BOTTLE() {
-        return MAXIMUM_RETAIL_PRICE_PER_BOTTLE;
+    public double getMaximum_retail_price_per_bottle() {
+        return maximum_retail_price_per_bottle;
     }
 }

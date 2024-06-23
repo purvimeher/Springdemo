@@ -70,5 +70,10 @@ public class ProductController {
                 .contentType(MediaType.parseMediaType("application/csv"))
                 .body(file);
     }
+
+    @GetMapping("/{brandCategory}/{brand}/{sizeML}")
+    public ResponseEntity<Object> getProductInfoByName(@PathVariable String brandCategory,@PathVariable String brand,@PathVariable String sizeML) {
+        return ResponseHandler.responseBuilder("Requested ProductInfo : " + brand, HttpStatus.OK, productPriceService.findProductInfoByName(brand,brandCategory,sizeML));
+    }
 }
 

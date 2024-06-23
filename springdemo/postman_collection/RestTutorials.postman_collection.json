@@ -415,6 +415,28 @@
 					"response": []
 				},
 				{
+					"name": "get specific Product Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/product/DELUXE PRESTIGE BRAND/OFFICERS CHOICE PRESTIGE WHISKY/1000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"DELUXE PRESTIGE BRAND",
+								"OFFICERS CHOICE PRESTIGE WHISKY",
+								"1000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Products upload",
 					"request": {
 						"method": "POST",
