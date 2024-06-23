@@ -12,7 +12,7 @@ import java.util.List;
 
 public class CSVHelper {
     public static String TYPE = "text/csv";
-    static String[] HEADERs = {"SL_NO", "BRAND_CATEGORY", "BRAND", "SIZE_ML", "MAXIMUM_RETAIL_PRICE_PER_BOTTLE"};
+    static String[] HEADERs = {"SL_NO", "BRAND_CATEGORY", "BRAND", "SIZE_ML", "MAXIMUM_RETAIL_PRICE_PER_BOTTLE","PRICE_DURATION"};
 
     public static boolean hasCSVFormat(MultipartFile file) {
         return TYPE.equals(file.getContentType()) || file.getContentType().equals("application/vnd.ms-excel");
@@ -26,7 +26,7 @@ public class CSVHelper {
             Iterable<CSVRecord> csvRecords = csvParser.getRecords();
 
             for (CSVRecord csvRecord : csvRecords) {
-                Product product = new Product(csvRecord.get("BRAND_CATEGORY"), csvRecord.get("BRAND"), csvRecord.get("SIZE_ML"), Double.valueOf(csvRecord.get("MAXIMUM_RETAIL_PRICE_PER_BOTTLE")));
+                Product product = new Product(csvRecord.get("BRAND_CATEGORY"), csvRecord.get("BRAND"), csvRecord.get("SIZE_ML"), Double.valueOf(csvRecord.get("MAXIMUM_RETAIL_PRICE_PER_BOTTLE")),csvRecord.get("PRICE_DURATION"));
 
                 productList.add(product);
             }
@@ -48,7 +48,8 @@ public class CSVHelper {
                         product.getBrand_category(),
                         product.getBrand(),
                         product.getSize_ml(),
-                        String.valueOf(product.getMaximum_retail_price_per_bottle())
+                        String.valueOf(product.getMaximum_retail_price_per_bottle()),
+                        product.getPrice_duration()
                 );
 
                 csvPrinter.printRecord(data);

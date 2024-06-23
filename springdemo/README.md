@@ -50,3 +50,19 @@ csv upload data
 https://github.com/sk444/spring-boot-import-csv-file-app
 
 https://www.pixeltrice.com/import-the-csv-file-into-mysql-database-using-spring-boot-application/
+
+mysql related
+CREATE TABLE vendor_info_service.product (
+id INT AUTO_INCREMENT primary key NOT NULL,
+brand varchar(255),
+brand_category varchar(255),
+size_ml varchar(255),
+maximum_retail_price_per_bottle double(10,2),
+price_duration varchar(255)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+SELECT * FROM vendor_info_service.product ;
+
+alter table vendor_info_service.product add price_duration varchar(255);

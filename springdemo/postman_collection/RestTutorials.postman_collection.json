@@ -437,6 +437,169 @@
 					"response": []
 				},
 				{
+					"name": "get specific Product Info using detailed query params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/product/info?brand=OLD MONK VERY OLD VATTED XXX DELUXE&brandCategory=DELUXE PRESTIGE BRAND&sizeML=750",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"info"
+							],
+							"query": [
+								{
+									"key": "brand",
+									"value": "OLD MONK VERY OLD VATTED XXX DELUXE"
+								},
+								{
+									"key": "brandCategory",
+									"value": "DELUXE PRESTIGE BRAND"
+								},
+								{
+									"key": "sizeML",
+									"value": "750"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get specific Product InfoByCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/product/infoByCategory?brandCategory=BEER",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"infoByCategory"
+							],
+							"query": [
+								{
+									"key": "brandCategory",
+									"value": "BEER"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get specific Product infoByPriceDuration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/product/infoByPriceDuration?priceDuration=2024_Q1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"infoByPriceDuration"
+							],
+							"query": [
+								{
+									"key": "priceDuration",
+									"value": "2024_Q1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get specific Product InfoBySize",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/product/infoBySize?size=180",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"infoBySize"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "180"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get specific Product infoByBrand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/product/infoByBrand?brand=THE KING LUIS XIII BRANDY",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"infoByBrand"
+							],
+							"query": [
+								{
+									"key": "brand",
+									"value": "THE KING LUIS XIII BRANDY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get specific Product by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/product?id=399",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "399"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Products upload",
 					"request": {
 						"method": "POST",

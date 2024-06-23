@@ -41,4 +41,23 @@ public class ProductPriceService {
         return productRepository.findProductInfoByName(brand,brandCategory,sizeMl);
     }
 
+    public List<Optional<Product>> findProductInfoByCategory(String brandCategory) {
+        return productRepository.findProductInfoByCategory(brandCategory);
+    }
+
+    public List<Optional<Product>> findProductInfoByPriceDuration(String priceDuration) {
+        return productRepository.findProductInfoByPriceDuration(priceDuration);
+    }
+
+    public List<Optional<Product>> findProductInfoBySize(String size) {
+        return productRepository.findProductInfoBySize(size);
+    }
+
+    public List<Optional<Product>> findProductInfoByBrand(String brand) {
+        return productRepository.findProductInfoByBrandName(brand);
+    }
+
+    public List<Optional<Product>> findProductInfoById(int id) {
+        return productRepository.findProductInfoById(id);
+    }
 }

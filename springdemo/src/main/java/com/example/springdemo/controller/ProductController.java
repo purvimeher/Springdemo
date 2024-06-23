@@ -65,15 +65,42 @@ public class ProductController {
     public ResponseEntity<InputStreamResource> downloadFile(@PathVariable String fileName) {
         InputStreamResource file = new InputStreamResource(productPriceService.load());
 
-        return ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + fileName)
-                .contentType(MediaType.parseMediaType("application/csv"))
-                .body(file);
+        return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + fileName).contentType(MediaType.parseMediaType("application/csv")).body(file);
     }
 
     @GetMapping("/{brandCategory}/{brand}/{sizeML}")
-    public ResponseEntity<Object> getProductInfoByName(@PathVariable String brandCategory,@PathVariable String brand,@PathVariable String sizeML) {
-        return ResponseHandler.responseBuilder("Requested ProductInfo : " + brand, HttpStatus.OK, productPriceService.findProductInfoByName(brand,brandCategory,sizeML));
+    public ResponseEntity<Object> getProductInfoByName(@PathVariable String brandCategory, @PathVariable String brand, @PathVariable String sizeML) {
+        return ResponseHandler.responseBuilder("Requested ProductInfo : " + brand, HttpStatus.OK, productPriceService.findProductInfoByName(brand, brandCategory, sizeML));
+    }
+
+    @GetMapping("/info")
+    public ResponseEntity<Object> getProductInfoByParams(@RequestParam(required = false, defaultValue = "DELUXE PRESTIGE BRAND") String brandCategory, @RequestParam(required = false, defaultValue = "OFFICERS CHOICE PRESTIGE WHISKY") String brand, @RequestParam(required = false, defaultValue = "1000") String sizeML) {
+        return ResponseHandler.responseBuilder("Requested ProductInfo : " + brand, HttpStatus.OK, productPriceService.findProductInfoByName(brand, brandCategory, sizeML));
+    }
+
+    @GetMapping("/infoByCategory")
+    public ResponseEntity<Object> getProductInfoByCategoryParams(@RequestParam(required = false, defaultValue = "DELUXE PRESTIGE BRAND") String brandCategory) {
+        return ResponseHandler.responseBuilder("Requested ProductInfo : " + brandCategory, HttpStatus.OK, productPriceService.findProductInfoByCategory(brandCategory));
+    }
+
+    @GetMapping("/infoByPriceDuration")
+    public ResponseEntity<Object> getProductInfoByPriceDurationParams(@RequestParam(required = false, defaultValue = "2024_Q1") String priceDuration) {
+        return ResponseHandler.responseBuilder("Requested ProductInfo : " + priceDuration, HttpStatus.OK, productPriceService.findProductInfoByPriceDuration(priceDuration));
+    }
+
+    @GetMapping("/infoBySize")
+    public ResponseEntity<Object> getProductInfoBySizeParams(@RequestParam(required = false, defaultValue = "1000") String size) {
+        return ResponseHandler.responseBuilder("Requested ProductInfo : " + size, HttpStatus.OK, productPriceService.findProductInfoBySize(size));
+    }
+
+    @GetMapping("/infoByBrand")
+    public ResponseEntity<Object> getProductInfoByBrandParams(@RequestParam(required = false, defaultValue = "OFFICERS CHOICE PRESTIGE WHISKY") String brand) {
+        return ResponseHandler.responseBuilder("Requested ProductInfo : " + brand, HttpStatus.OK, productPriceService.findProductInfoByBrand(brand));
+    }
+
+    @GetMapping("")
+    public ResponseEntity<Object> getProductInfoByIdParams(@RequestParam(required = false, defaultValue = "1") int id) {
+        return ResponseHandler.responseBuilder("Requested ProductInfo : " + id, HttpStatus.OK, productPriceService.findProductInfoById(id));
     }
 }
 
