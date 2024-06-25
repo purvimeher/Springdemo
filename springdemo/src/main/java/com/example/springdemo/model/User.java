@@ -3,7 +3,6 @@ package com.example.springdemo.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -50,11 +49,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "userId='" + userId + '\'' +
-                ", name='" + name + '\'' +
-                ", creationDate=" + creationDate +
-                ", userSettings=" + userSettings +
-                '}';
+        return "User{" + "userId='" + userId + '\'' + ", name='" + name + '\'' + ", creationDate=" + creationDate + ", userSettings=" + userSettings + '}';
     }
 }

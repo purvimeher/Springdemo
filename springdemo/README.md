@@ -71,3 +71,6 @@ alter table vendor_info_service.product add price_duration varchar(255);
 //basic auth is added for all endpoints security 
 
 https://stackoverflow.com/questions/74853613/basic-authentication-on-rest-service-with-spring-boot
+
+DI and IOC tutorials:
+https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring
