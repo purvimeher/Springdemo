@@ -6,16 +6,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class Engine {
 
-    private String engineCapacity;
+    private final String engineCapacity;
 
-    public Engine( @Value("1000cc") String engineCapacity) {
+    public Engine(@Value("1000cc") String engineCapacity) {
         this.engineCapacity = engineCapacity;
     }
 
     @Override
     public String toString() {
-        return "Engine{" +
-                "engineCapacity='" + engineCapacity + '\'' +
-                '}';
+        return "Engine{" + "engineCapacity='" + engineCapacity + '\'' + '}';
     }
 }

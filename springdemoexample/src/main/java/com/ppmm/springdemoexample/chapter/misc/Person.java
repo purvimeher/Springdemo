@@ -9,15 +9,16 @@ public class Person {
     @Autowired
     private Car myCar;
 
-    public void canEat(){
+    public Person(Car myCar) {
+        this.myCar = myCar;
+    }
+
+    public void canEat() {
         System.out.println("Eating");
     }
 
     public Car getMyCar() {
         return myCar;
-    }
-    public Person(Car myCar) {
-        this.myCar = myCar;
     }
 
     @Override

@@ -9,9 +9,9 @@ public class Car {
 
     @Autowired
     private Engine engine;
-    private  String name;
+    private String name;
 
-    public Car( @Value("Maruthi") String name, Engine engine) {
+    public Car(@Value("Maruthi") String name, Engine engine) {
         this.name = name;
         this.engine = engine;
     }
