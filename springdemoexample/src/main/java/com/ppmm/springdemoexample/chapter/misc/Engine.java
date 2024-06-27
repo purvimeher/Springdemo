@@ -8,7 +8,7 @@ public class Engine {
 
     private final String engineCapacity;
 
-    public Engine(@Value("1000cc") String engineCapacity) {
+    public Engine(@Value("${engineCapacity}") String engineCapacity) {
         this.engineCapacity = engineCapacity;
     }
 

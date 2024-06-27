@@ -11,7 +11,7 @@ public class Car {
     private Engine engine;
     private String name;
 
-    public Car(@Value("Maruthi") String name, Engine engine) {
+    public Car(@Value("Honda") String name, Engine engine) {
         this.name = name;
         this.engine = engine;
     }
