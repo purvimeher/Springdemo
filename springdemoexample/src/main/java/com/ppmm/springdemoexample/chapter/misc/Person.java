@@ -1,6 +1,8 @@
 package com.ppmm.springdemoexample.chapter.misc;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -9,12 +11,15 @@ public class Person {
     @Autowired
     private Car myCar;
 
+    @Value("${personEats} ${personEats1}")
+    private String personEats;
+
     public Person(Car myCar) {
         this.myCar = myCar;
     }
 
     public void canEat() {
-        System.out.println("Eating");
+        System.out.println(personEats);
     }
 
     public Car getMyCar() {
