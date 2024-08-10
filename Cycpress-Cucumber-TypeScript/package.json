@@ -1,0 +1,19 @@
+{
+  "name": "cycpress-cucumber-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Mehers",
+  "license": "ISC",
+  "description": "",
+  "dependencies": { 
+  "@badeball/cypress-cucumber-preprocessor": "latest",
+  "@cypress/webpack-preprocessor": "latest",
+  "cypress": "latest",
+  "ts-loader": "latest",
+  "typescript": "latest" 
+}
+}
