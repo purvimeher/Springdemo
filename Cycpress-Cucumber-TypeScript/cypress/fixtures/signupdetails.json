@@ -1,0 +1,9 @@
+{
+    "firstName": "Firts Name Example",
+    "email": "hello@cypress.io",
+    "telephone": "12456789",
+    "gender":"male",
+    "experience":"one",
+    "language":"java",
+    "options":[ "Cypress","Postman","Jenkins","Docker"]
+  }
