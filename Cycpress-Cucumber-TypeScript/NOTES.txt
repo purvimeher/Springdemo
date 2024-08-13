@@ -1,0 +1,5 @@
+//TODO
+
+Find out about screenshots and Videos
+// how to interact with alerts and its controls
+How to debug 
