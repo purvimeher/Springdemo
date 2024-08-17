@@ -48,7 +48,7 @@ async function setupNodeEvents(
 
 export default defineConfig({
   e2e: {
-    baseUrl: "https://duckduckgo.com",
+    baseUrl: "https://qavbox.github.io",
     specPattern: "**/*.feature",
     setupNodeEvents,
     video: true

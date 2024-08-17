@@ -3,3 +3,19 @@
 Find out about screenshots and Videos
 // how to interact with alerts and its controls
 How to debug 
+
+
+Object.entries(obj).forEach(entry => {
+  const [key, value] = entry;
+  console.log(key, value);
+});
+
+//sample shadow dom website
+https://declarative-shadow-dom-sample.vercel.app/
+
+
+https://example.cypress.io/commands/misc
+
+https://docs.cypress.io/api/commands/spread
+
+https://qavbox.github.io/demo/

@@ -1,5 +1,5 @@
 Feature: qavbox.github.io
-
+  @debug
   Scenario: visiting the QVABox HomePage
     When I load qavbox home page
     Then I should see a valid title

@@ -1,0 +1,7 @@
+{
+    "type": "node",
+    "request": "launch",
+    "name": "Cucumber Tests",
+    "program": "${workspaceRoot}/node_modules/.bin/cucumber-js",
+    "internalConsoleOptions": "openOnSessionStart",
+}
