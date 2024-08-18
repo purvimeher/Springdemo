@@ -1,8 +1,10 @@
 import { Given } from "@badeball/cypress-cucumber-preprocessor";
 import QAVHomePage from "./utils/dto/QAVHomePage";
 import SignInDetails from "./utils/dto/SignInDetails";
+import { plainToInstance } from 'class-transformer';
 
 const qavHomePage = new QAVHomePage();
+
 Given(/^I execute a custom command$/, () => {
     qavHomePage.visitPage("/demo/");
     cy.login('Avatar Meherbaba Ki Jai!!!', 'Sachitananda Paramananda Meherbaba Vigyananda!!!');
@@ -24,17 +26,13 @@ Given(/^I execute custom cypress query commands$/, () => {
 });
 
 
-Given(/^I try to convert json into custom object$/, () => {
-
-    // let signInDetails:SignInDetails;
-    // cy.fixture("signupdetails").then((content)=>{
-
-    //     signInDetails  = Object.assign(new SignInDetails(), JSON.parse(content));
-
-    // });
-
-    // cy.log(signInDetails.firstName);
-
+Given(/^I try to convert json into custom object$/, function () {
+    let signInDetails: SignInDetails = new SignInDetails();
+    cy.fixture("signupdetails").then((content) => {
+        Object.assign(signInDetails, content);
+        //    signInDetails = plainToInstance(SignInDetails, content as Object);
+        cy.log('Converted Object : ' + JSON.stringify(signInDetails));
+    });
     cy.fixture('testdata.json').then((testData) => {
         cy.log(JSON.stringify(testData.TC02.case_id));
         cy.log(JSON.stringify(testData.TC02.case));

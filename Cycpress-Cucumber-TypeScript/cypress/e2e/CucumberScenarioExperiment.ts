@@ -29,6 +29,8 @@ When(/^I create SignInDetails object using data table$/, (table: DataTable) => {
         signInDetails.gender = row[3];
         signInDetails.experience = row[4];
         signInDetails.language = row[5];
+        signInDetails.options = row[6].split(',');
+
         signInDetailsList.push(signInDetails);
         // cy.log(JSON.stringify(signInDetails));
         // cy.log(signInDetailsList.length.toString());
