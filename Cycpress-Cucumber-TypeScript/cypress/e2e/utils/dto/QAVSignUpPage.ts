@@ -11,7 +11,8 @@ export class QAVSignUpPage extends QAVCommonPage{
         languageCheckBx:()=>cy.get('input[name="language"]'),
         toolsMultiSelect:()=>cy.get('#tools'),
         fileInput: () => cy.get('input[name="datafile"]'),
-        submitBtn: () => cy.get('#submit')
+        submitBtn: () => cy.get('#submit'),
+        formElement:()=> cy.get('#form1')
     }
 
     enterUsername(username) {
@@ -51,5 +52,9 @@ export class QAVSignUpPage extends QAVCommonPage{
 
     uploadFile(file: string[]) {
         this.QAVSignUpPageElements.fileInput().selectFile(file);
+    }
+
+    getFormElement():any{
+        return this.QAVSignUpPageElements.formElement().submit();
     }
 }

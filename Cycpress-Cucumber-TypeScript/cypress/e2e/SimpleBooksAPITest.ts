@@ -26,6 +26,7 @@ Given("I do a get orders request", () => {
         cy.log(response.status.toString());
         cy.log( JSON.stringify(response.body));
         expect(response.status).eq(200)
+        cy.writeFile('cypress/outputFiles/testOutput.json',response.body);
     });
 });
 

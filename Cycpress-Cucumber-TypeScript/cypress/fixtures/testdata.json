@@ -1,0 +1,23 @@
+{
+    "TC01": {
+        "case_id": 1,
+        "case": "Login with valid data as wholesaler",
+        "username": "admin",
+        "password": "password",
+        "result": "pass"
+    },
+    "TC02": {
+        "case_id": 2,
+        "case": "Login with valid data as reseller",
+        "username": "myreseller.admin",
+        "password": "password",
+        "result": "pass"
+    },
+    "TC03": {
+        "case_id": 3,
+        "case": "Login with valid data as subscriber",
+        "username": "mytenant.admin",
+        "password": "password",
+        "result": "pass"
+    }
+}

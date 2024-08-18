@@ -19,3 +19,10 @@ https://example.cypress.io/commands/misc
 https://docs.cypress.io/api/commands/spread
 
 https://qavbox.github.io/demo/
+
+
+https://stackoverflow.com/questions/53206565/how-to-map-json-object-with-typescript-class-object
+npm i -D tapi.js
+
+cucumber typescript documentation
+https://github.com/badeball/cypress-cucumber-preprocessor/blob/master/docs/test-configuration.md

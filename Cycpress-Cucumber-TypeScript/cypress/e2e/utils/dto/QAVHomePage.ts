@@ -9,6 +9,8 @@ class QAVHomePage extends QAVCommonPage{
     }
 
     clickOnLink(linkText) {
+        // cy.once('uncaught:exception', () => false )
+
         this.QAVHomePageElements.mainfFormBtns().each(($txt) => {
             if ($txt.text() == linkText) {
                 cy.wrap($txt).click();

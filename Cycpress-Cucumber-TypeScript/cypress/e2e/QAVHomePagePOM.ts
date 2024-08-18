@@ -54,6 +54,7 @@ When(/^I fill up signup details with (all valid details|partial details)$/, (opt
     qavSignUpPage.selectTools('Selenium');
     qavSignUpPage.uploadFile(['cypress/fixtures/example.json', 'cypress/fixtures/signupdetails.json']);
     qavSignUpPage.clickSubmit();
+    // qavSignUpPage.getFormElement();
 });
 
 When(/^I click on HomePage button$/, () => {

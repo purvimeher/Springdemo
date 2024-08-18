@@ -1,10 +1,13 @@
+@includeShadowDom(true)
+@screenshotOnRunFailure(true)
+# @retries(5)
 Feature: qavbox.github.io
 
   Scenario: visiting the QVABox HomePage
     When I load qavbox home page
     Then I should see a valid title
-    And I should see all ten buttons
-    And I read testData file and display content
+    # And I should see all ten buttons
+    # And I read testData file and display content
     # When I click on link "SignUp Form"
     # And I fill up signup details with all valid details
     # And I click on HomePage button
@@ -35,4 +38,4 @@ Feature: qavbox.github.io
     # Then I verify text present in second frame
     # When I enter text "Meher" into input box in Inner frame
     # And I click on HomePage button
-    # # And I click on link "Shadow DOM"
+    And I click on link "Shadow DOM"
